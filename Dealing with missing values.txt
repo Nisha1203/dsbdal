@@ -1,0 +1,27 @@
+Dealing with missing values
+
+1
+# calculate the mean vaule for "stroke" column
+avg_stroke = df["stroke"].mean(axis = 0)
+print("Average of stroke:", avg_stroke)
+
+
+4
+df["CRIM"].fillna(df["CRIM"].mean(), inplace=True)   # Fill CRIM with mean value
+
+df["ZN"].fillna(0, inplace=True)                     # Fill ZN with mode value, because 360 of the entries are 0
+
+df["INDUS"].fillna(df["INDUS"].mean(), inplace=True) # Fill INDUS with mean value
+
+df["CHAS"].fillna(0, inplace=True)                   # Fill CHAS with mode value, because 452 of the entries are 0
+
+df["AGE"].fillna(df["AGE"].mean(), inplace=True)     # Fill AGE with mean value
+
+df["LSTAT"].fillna(df["LSTAT"].mean(), inplace=True) # Fill LSTAT with mean value
+
+df['CRIM'].fillna(df['CRIM'].mean(),inplace=True)       #replace all the null values with the mean of each
+df['ZN'].fillna(df['ZN'].mean(),inplace=True)  
+df['INDUS'].fillna(df['INDUS'].mean(),inplace=True)
+df['CHAS'].fillna(df['CHAS'].mean(),inplace=True)
+df['AGE'].fillna(df['AGE'].mean(),inplace=True)
+df['LSTAT'].fillna(df['LSTAT'].mean(),inplace=True)
